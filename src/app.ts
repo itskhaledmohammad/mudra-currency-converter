@@ -4,6 +4,9 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
 
+// Dotenv.
+require('dotenv').config({path: '@config/.env'})
+
 // Initializing our express app 🎉
 const app: express.Application = express();
 
