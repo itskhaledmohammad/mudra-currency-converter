@@ -20,8 +20,13 @@ app.use(cors());
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] :method :url HTTP/:http-version :status [content-length: :res[content-length]] - [referrer: :referrer] - [user-agent: :user-agent] - [response-time: :response-time ms] - [total-time: :total-time ms]'));
 
 //  Parsing the body. 💪
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded());
+
+
+app.get('/hello', (req, res) => {
+    res.json({"message": "We are live 👍"});
+})
 
 // Exporting our app 💯 
 export default app;
