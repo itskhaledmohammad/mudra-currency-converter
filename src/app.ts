@@ -21,4 +21,4 @@ app.use(express.json())
 app.use(express.urlencoded());
 
 // Exporting our app 💯 
-module.exports = app;
+export default app;
