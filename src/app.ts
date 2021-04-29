@@ -21,7 +21,7 @@ app.use(morgan(':remote-addr - :remote-user [:date[clf]] :method :url HTTP/:http
 
 //  Parsing the body. 💪
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({extended: true}));
 
 
 app.get('/hello', (req, res) => {
