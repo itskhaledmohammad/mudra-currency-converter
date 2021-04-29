@@ -32,5 +32,12 @@
     "module-alias": "^2.2.2",
     "pm2": "^4.5.6",
     "ts-node-dev": "^1.1.6"
+  },
+  "_moduleAliases": {
+    "@root": ".",
+    "@src": "src",
+    "@api": "src/api",
+    "@config": "config"
   }
+
 }
