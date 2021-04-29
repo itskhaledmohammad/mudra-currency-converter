@@ -39,5 +39,4 @@
     "@api": "src/api",
     "@config": "config"
   }
-
 }
