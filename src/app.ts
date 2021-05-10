@@ -24,6 +24,16 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 
+app.use('/api/v1/')
+
+// TODO: List Currencies /api/symbols
+app
+// TODO: Convert Currency (params base and target)
+// TODO: Error Handle 
+// TODO: Write a caching layer.
+
+// TODO: CRON
+// TODO: Write tests for it.
 app.get('/hello', (req, res) => {
     res.json({"message": "We are live 👍"});
 })
