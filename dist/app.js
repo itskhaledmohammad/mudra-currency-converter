@@ -21,10 +21,13 @@ app.use(morgan_1.default(':remote-addr - :remote-user [:date[clf]] :method :url 
 //  Parsing the body. 💪
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-// TODO: Get Currencies
-// TODO: Return Currencies
+app.use('/api/v1/');
+// TODO: List Currencies /api/symbols
+app;
+// TODO: Convert Currency (params base and target)
 // TODO: Error Handle 
 // TODO: Write a caching layer.
+// TODO: CRON
 // TODO: Write tests for it.
 app.get('/hello', (req, res) => {
     res.json({ "message": "We are live 👍" });

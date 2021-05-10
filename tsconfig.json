@@ -13,9 +13,13 @@
     "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
     "paths": {
+      "@root/*": ["*"],
+      "@src/*": ["src/*"],
+      "@api/*": ["src/api/*"],
+      "@config/*": ["config/*"],
       "*": [
         "node_modules/*"
-      ]
+      ],
     }
   },
   "include": [
