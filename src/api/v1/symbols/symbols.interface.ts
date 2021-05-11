@@ -1,4 +1,7 @@
-export interface IFixerAPIData {
+type currencyRate = { [key: string]: number; }
+type currencyName = { [key: string]: string }
+
+export interface IFixerAPICurrencyResponse {
     "success": boolean,
     "timestamp": number,
     "base": string,
@@ -6,7 +9,12 @@ export interface IFixerAPIData {
     "rates": currencyRate
 }
 
-export interface IAPIResponse {
+export interface IFixerAPISymbolsResponse {
+    "success": boolean,
+    "symbols": currencyName
+}
+
+export interface IAPICurrencyResponse {
     "success": boolean,
     "timestamp": number,
     "date": string,
@@ -14,5 +22,3 @@ export interface IAPIResponse {
     "target": string,
     "rate": number
 }
-
-type currencyRate = { [key: string]: number; }
