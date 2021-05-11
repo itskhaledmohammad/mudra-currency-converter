@@ -27,3 +27,9 @@ async function convertCurrency(req: express.Request, res: express.Response) {
     }
     return res.status(200).json(response)
 }
+
+module.exports = {
+    listSymbols,
+    listAllCurrencyRate,
+    convertCurrency
+}
