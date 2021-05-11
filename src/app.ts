@@ -3,9 +3,10 @@ import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
+const apiRoutesV1:express.Router = require("@api/v1/index")
 
 // Dotenv.
-require('dotenv').config({path: '@config/.env'})
+require('dotenv').config({path: './config/.env'})
 
 // Initializing our express app 🎉
 const app: express.Application = express();
@@ -24,11 +25,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 
-app.use('/api/v1/')
+app.use('/api/', apiRoutesV1);
 
-// TODO: List Currencies /api/symbols
-app
-// TODO: Convert Currency (params base and target)
+
 // TODO: Error Handle 
 // TODO: Write a caching layer.
 

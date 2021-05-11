@@ -3,9 +3,14 @@ import axiosInstance from "@api/v1/utils/axios";
 import {IFixerAPIData, IAPIResponse} from "./symbols.interface"
 import {DateTime} from "luxon"
 
-async function listSymbols(req: express.Request, res: express.Response) { 
+async function listSymbols(req: express.Request, res: express.Response) {     
+try{
+    console.log(`http://data.fixer.io/api/symbols?access_key=${process.env.FIXER_API_KEY}`)
     const symbols = await axiosInstance.get(`/symbols?access_key=${process.env.FIXER_API_KEY}`);
     return res.status(200).json(symbols)
+} catch(err) {
+    return res.status(400).json(err)
+}
 }
 
 async function listAllCurrencyRate(req: express.Request, res: express.Response) {
