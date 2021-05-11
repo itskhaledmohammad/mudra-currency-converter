@@ -15,7 +15,7 @@ async function listAllCurrencyRate(req: express.Request, res: express.Response) 
 }
 
 async function convertCurrency(req: express.Request, res: express.Response) {
-    const {base, target} = req.params;
+    const {base = "USD", target} = req.params;
     const {data}: {data: IFixerAPICurrencyResponse} = await axiosInstance.get(`/latest?access_key=${process.env.FIXER_API_KEY}`);
     const rate = data.rates[target] / data.rates[base]
     const response: IAPICurrencyResponse = {
