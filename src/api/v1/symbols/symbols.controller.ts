@@ -2,6 +2,7 @@ import express from "express"
 import axiosInstance from "@api/v1/utils/axios";
 import {IFixerAPICurrencyResponse, IFixerAPISymbolsResponse, IAPICurrencyResponse} from "./symbols.interface"
 import {DateTime} from "luxon"
+import { string } from "joi";
 
 async function listSymbols(req: express.Request, res: express.Response) {     
     console.log(`http://data.fixer.io/api/symbols?access_key=${process.env.FIXER_API_KEY}`)
@@ -15,9 +16,10 @@ async function listAllCurrencyRate(req: express.Request, res: express.Response) 
 }
 
 async function convertCurrency(req: express.Request, res: express.Response) {
-    const {base = "USD", target} = req.params;
+    const {base = "USD", target} = JSON.parse(JSON.stringify(req.query));
     const {data}: {data: IFixerAPICurrencyResponse} = await axiosInstance.get(`/latest?access_key=${process.env.FIXER_API_KEY}`);
     const rate = data.rates[target] / data.rates[base]
+
     const response: IAPICurrencyResponse = {
         success: true,
         timestamp: DateTime.now().toMillis(),
