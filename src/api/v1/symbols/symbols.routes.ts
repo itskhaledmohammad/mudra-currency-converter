@@ -1,10 +1,11 @@
 import express from "express";
+const { validateInput } = require("@api/v1/symbols/symbols.middleware")
+const schemas = require("@api/v1/symbols/symbols.validator")
 const { listSymbols, listAllCurrencyRate, convertCurrency } = require("./symbols.controller")
-
 const router:express.Router = express.Router()
 
 router.get('/symbols', listSymbols)
-router.get('/symbols/convert', convertCurrency)
+router.get('/symbols/convert', validateInput(schemas.currencyConvertSchema), convertCurrency)
 router.get('/latest', listAllCurrencyRate)
 
 module.exports = router;
