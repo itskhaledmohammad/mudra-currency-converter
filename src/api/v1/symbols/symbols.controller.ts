@@ -2,10 +2,8 @@ import express from "express"
 import axiosInstance from "@api/v1/utils/axios";
 import {IFixerAPICurrencyResponse, IFixerAPISymbolsResponse, IAPICurrencyResponse} from "./symbols.interface"
 import {DateTime} from "luxon"
-import { string } from "joi";
 
 async function listSymbols(req: express.Request, res: express.Response) {     
-    console.log(`http://data.fixer.io/api/symbols?access_key=${process.env.FIXER_API_KEY}`)
     const { data }: {data: IFixerAPISymbolsResponse} = await axiosInstance.get(`/symbols?access_key=${process.env.FIXER_API_KEY}`);
     return res.status(200).json(data)
 }
