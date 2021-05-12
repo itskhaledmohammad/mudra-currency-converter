@@ -3,9 +3,10 @@ import express from "express";
 import morgan from "morgan";
 import helmet from "helmet";
 import cors from "cors";
+import { developmentErrors } from "@api/v1/utils/errorHandlers"
 const apiRoutesV1:express.Router = require("@api/v1/index")
 
-// Dotenv.
+// Loading our environment variables 💻
 require('dotenv').config({path: './config/.env'})
 
 // Initializing our express app 🎉
@@ -24,13 +25,13 @@ app.use(morgan(':remote-addr - :remote-user [:date[clf]] :method :url HTTP/:http
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-
+// We are handling different routes now. 🥳
 app.use('/api/', apiRoutesV1);
 
+// Handling errors ❌
+app.use(developmentErrors)
 
-// TODO: Error Handle 
 // TODO: Write a caching layer.
-
 // TODO: CRON
 // TODO: Write tests for it.
 app.get('/hello', (req, res) => {
