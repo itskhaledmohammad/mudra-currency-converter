@@ -34,9 +34,7 @@ app.use(developmentErrors)
 // TODO: Write a caching layer.
 // TODO: CRON
 // TODO: Write tests for it.
-app.get('/hello', (req, res) => {
-    res.json({"message": "We are live 👍"});
-})
+
 
 // Exporting our app 💯 
 export default app;
