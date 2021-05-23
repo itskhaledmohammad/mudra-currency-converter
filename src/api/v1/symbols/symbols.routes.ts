@@ -1,9 +1,9 @@
-import express from "express";
-import { catchErrors } from "@api/v1/utils/errorHandlers"
+import express from 'express';
+import { catchErrors } from '@api/v1/utils/errorHandlers'
 
-const { validateInput } = require("@api/v1/symbols/symbols.middleware")
-const schemas = require("@api/v1/symbols/symbols.validator")
-const { listSymbols, listAllCurrencyRate, convertCurrency } = require("./symbols.controller")
+const { validateInput } = require('@api/v1/symbols/symbols.middleware')
+const schemas = require('@api/v1/symbols/symbols.validator')
+const { listSymbols, listAllCurrencyRate, convertCurrency } = require('./symbols.controller')
 const router:express.Router = express.Router()
 
 

@@ -1,10 +1,10 @@
 require('module-alias/register')
-import express from "express";
-import morgan from "morgan";
-import helmet from "helmet";
-import cors from "cors";
-import { developmentErrors } from "@api/v1/utils/errorHandlers"
-const apiRoutesV1:express.Router = require("@api/v1/index")
+import express from 'express';
+import morgan from 'morgan';
+import helmet from 'helmet';
+import cors from 'cors';
+import { developmentErrors } from '@api/v1/utils/errorHandlers'
+const apiRoutesV1:express.Router = require('@api/v1/index')
 
 // Loading our environment variables 💻
 require('dotenv').config({path: './config/.env'})

@@ -1,4 +1,4 @@
-import express from "express" 
+import express from 'express' 
 const symbol_routes:express.Router = require('@api/v1/symbols/symbols.routes')
 
 const router: express.Router = express.Router()
