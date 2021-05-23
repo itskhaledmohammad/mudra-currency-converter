@@ -2,13 +2,22 @@
     "root": true,
     "extends": [
         "plugin:@typescript-eslint/recommended",
-        // "plugin:prettier/recommended",
-        // "prettier"
+        "plugin:prettier/recommended",
+        "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "plugins": ["@typescript-eslint", "prettier"],
     "rules": {
-    //   "prettier/prettier": "error",
+      "prettier/prettier": ["error", {
+        "bracketSpacing": true,
+        "printWidth": 100,
+        "proseWrap": "always",
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "trailingComma": "all",
+        "arrowParens": "always"
+      }],
       "@typescript-eslint/no-var-requires": [0],
       "no-return-assign": ["error", "except-parens"],
       "no-restricted-syntax": [2, "ForInStatement", "LabeledStatement", "WithStatement"],
